@@ -26,22 +26,22 @@
             <RowConstraints vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="1" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="2" GridPane.columnIndex="1" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="3" GridPane.columnIndex="2" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="4" GridPane.columnIndex="3" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="5" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="6" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="7" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="8" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="9" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="11" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="12" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="13" GridPane.rowIndex="3" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="14" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="1" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="2" GridPane.columnIndex="1" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="3" GridPane.columnIndex="2" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="4" GridPane.columnIndex="3" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="5" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="6" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="7" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="8" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="9" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="11" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="12" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="13" GridPane.rowIndex="3" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" prefHeight="70.0" prefWidth="70.0" text="14" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changePlace" onDragOver="#dragOver" prefHeight="70.0" prefWidth="70.0" text="15" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label alignment="CENTER" contentDisplay="CENTER" text="&quot;             &quot;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" text="&quot;             &quot;" fx:id="blank" GridPane.columnIndex="3" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Button alignment="CENTER" mnemonicParsing="false" onAction="#clickToRestart" text="Nytt Spel" />
