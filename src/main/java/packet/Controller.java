@@ -1,6 +1,8 @@
 package packet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.EventListener;
 import java.util.List;
 
@@ -17,16 +19,35 @@ public class Controller {
     public int blankRow = 3;
     public Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15;
     public GridPane gridPane;
-
-
+    private List<Object> lista = new ArrayList<>();
 
     public void clickToRestart(){
         System.out.println("funka");
+        addToList();
         shuffleBoard();
     }
+    private void addToList(){
+        lista.add(button1);
+        lista.add(button2);
+        lista.add(button3);
+        lista.add(button4);
+        lista.add(button5);
+        lista.add(button6);
+        lista.add(button7);
+        lista.add(button8);
+        lista.add(button9);
+        lista.add(button10);
+        lista.add(button11);
+        lista.add(button12);
+        lista.add(button13);
+        lista.add(button14);
+        lista.add(button15);
+        lista.add(blank);
+    }
 
-    public void shuffleBoard(){
-        System.out.println("shuffle");
+    private void shuffleBoard(){
+        Collections.shuffle(lista);
+        System.out.println("shuffling board");
     }
 
     public void changePlace(ActionEvent e){
@@ -68,6 +89,7 @@ public class Controller {
                 (gridPane.getColumnIndex(button14) == 1 && gridPane.getRowIndex(button14) == 3) &&
                 (gridPane.getColumnIndex(button15) == 2 && gridPane.getRowIndex(button15) == 3)){
             System.out.println("du vann");
+            // fixa en till fxml som hoppar upp (via App, o ny fxml fil)
         }
     }
 
