@@ -17,6 +17,6 @@ public class Controller {
     }
 
     public void dragOver(ActionEvent e){
-
+        System.out.println("hej");
     }
 }
