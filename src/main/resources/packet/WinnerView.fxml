@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="150.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="packet.Controller">
+   <children>
+      <Label fx:id="wonLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="46.0" text="Grattis du vann!">
+         <font>
+            <Font size="40.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
