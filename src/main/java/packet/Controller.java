@@ -1,14 +1,12 @@
 package packet;
 
-import java.io.IOException;
-import java.util.EventListener;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
 public class Controller {
@@ -17,16 +15,44 @@ public class Controller {
     public int blankRow = 3;
     public Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15;
     public GridPane gridPane;
-
-
+    private List<Button> lista = new ArrayList<>();
+    private boolean isAddedToList = false;
 
     public void clickToRestart(){
-        System.out.println("funka");
+        System.out.println("Prog. INFO: Restaring game");
+
+        if (!isAddedToList){
+            addToList();
+        }
         shuffleBoard();
     }
+    private void addToList(){
+        lista.add(button1);
+        lista.add(button2);
+        lista.add(button3);
+        lista.add(button4);
+        lista.add(button5);
+        lista.add(button6);
+        lista.add(button7);
+        lista.add(button8);
+        lista.add(button9);
+        lista.add(button10);
+        lista.add(button11);
+        lista.add(button12);
+        lista.add(button13);
+        lista.add(button14);
+        lista.add(button15);
+        isAddedToList = true;
+        System.out.println("Prog. INFO: Buttons are now added to list, correctly");
 
-    public void shuffleBoard(){
-        System.out.println("shuffle");
+    }
+
+    private void shuffleBoard(){
+        Collections.shuffle(lista);
+        for (int i = 0; i < lista.size(); i++) {
+            swapPlace(lista.get(i), gridPane.getColumnIndex(lista.get(i)), gridPane.getRowIndex(lista.get(i)));
+        }
+        System.out.println("Prog. INFO: Board is now shuffled correctly");
     }
 
     public void changePlace(ActionEvent e){
@@ -37,10 +63,10 @@ public class Controller {
 
 
         if (true) {
-            swopPlace((Button) e.getSource(), tempColumn, tempRow);
+            swapPlace((Button) e.getSource(), tempColumn, tempRow);
         }
     }
-    private void swopPlace(Button button, int columnIndex, int rowIndex) {
+    private void swapPlace(Button button, int columnIndex, int rowIndex) {
         gridPane.setColumnIndex(button, blankColumn);
         gridPane.setRowIndex(button, blankRow);
 
@@ -68,6 +94,7 @@ public class Controller {
                 (gridPane.getColumnIndex(button14) == 1 && gridPane.getRowIndex(button14) == 3) &&
                 (gridPane.getColumnIndex(button15) == 2 && gridPane.getRowIndex(button15) == 3)){
             System.out.println("du vann");
+            // fixa en till fxml som hoppar upp (via App, o ny fxml fil)
         }
     }
 
