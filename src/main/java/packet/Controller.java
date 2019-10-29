@@ -18,15 +18,16 @@ public class Controller {
     private List<Button> lista = new ArrayList<>();
     private boolean isAddedToList = false;
 
-    public void clickToRestart(){
+    public void clickToRestart() {
         System.out.println("Prog. INFO: Restaring game");
 
-        if (!isAddedToList){
+        if (!isAddedToList) {
             addToList();
         }
         shuffleBoard();
     }
-    private void addToList(){
+
+    private void addToList() {
         lista.add(button1);
         lista.add(button2);
         lista.add(button3);
@@ -44,10 +45,9 @@ public class Controller {
         lista.add(button15);
         isAddedToList = true;
         System.out.println("Prog. INFO: Buttons are now added to list, correctly");
-
     }
 
-    private void shuffleBoard(){
+    private void shuffleBoard() {
         Collections.shuffle(lista);
         for (int i = 0; i < lista.size(); i++) {
             swapPlace(lista.get(i), gridPane.getColumnIndex(lista.get(i)), gridPane.getRowIndex(lista.get(i)));
@@ -55,17 +55,18 @@ public class Controller {
         System.out.println("Prog. INFO: Board is now shuffled correctly");
     }
 
-    public void changePlace(ActionEvent e){
+    public void checkPlace(ActionEvent e) {
         int tempColumn = gridPane.getColumnIndex((Button) e.getSource());
         int tempRow = gridPane.getRowIndex((Button) e.getSource());
-        System.out.println(tempColumn);
-        System.out.println(tempRow);
 
-
-        if (true) {
+        if ((gridPane.getColumnIndex(blank) == tempColumn && (gridPane.getRowIndex(blank) == (tempRow - 1) || gridPane.getRowIndex(blank) == (tempRow + 1))) ||
+                (gridPane.getRowIndex(blank) == tempRow && (gridPane.getColumnIndex(blank) == (tempColumn - 1) || gridPane.getColumnIndex(blank) == (tempColumn + 1)))) {
             swapPlace((Button) e.getSource(), tempColumn, tempRow);
+        } else {
+            System.out.println("Prog. INFO: Clicked button is not next to blank space.");
         }
     }
+
     private void swapPlace(Button button, int columnIndex, int rowIndex) {
         gridPane.setColumnIndex(button, blankColumn);
         gridPane.setRowIndex(button, blankRow);
@@ -76,7 +77,8 @@ public class Controller {
         hasWon();
 
     }
-    private void hasWon(){
+
+    private void hasWon() {
         if ((gridPane.getColumnIndex(blank) == 3 && gridPane.getRowIndex(blank) == 3) &&
                 (gridPane.getColumnIndex(button1) == 0 && gridPane.getRowIndex(button1) == 0) &&
                 (gridPane.getColumnIndex(button2) == 1 && gridPane.getRowIndex(button2) == 0) &&
@@ -92,7 +94,7 @@ public class Controller {
                 (gridPane.getColumnIndex(button12) == 3 && gridPane.getRowIndex(button12) == 2) &&
                 (gridPane.getColumnIndex(button13) == 0 && gridPane.getRowIndex(button13) == 3) &&
                 (gridPane.getColumnIndex(button14) == 1 && gridPane.getRowIndex(button14) == 3) &&
-                (gridPane.getColumnIndex(button15) == 2 && gridPane.getRowIndex(button15) == 3)){
+                (gridPane.getColumnIndex(button15) == 2 && gridPane.getRowIndex(button15) == 3)) {
             System.out.println("du vann");
             // fixa en till fxml som hoppar upp (via App, o ny fxml fil)
         }
