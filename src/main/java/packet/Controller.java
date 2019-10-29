@@ -1,5 +1,6 @@
 package packet;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -75,7 +76,6 @@ public class Controller {
         gridPane.setRowIndex(blank, (blankRow = rowIndex));
 
         hasWon();
-
     }
 
     private void hasWon() {
@@ -95,8 +95,8 @@ public class Controller {
                 (gridPane.getColumnIndex(button13) == 0 && gridPane.getRowIndex(button13) == 3) &&
                 (gridPane.getColumnIndex(button14) == 1 && gridPane.getRowIndex(button14) == 3) &&
                 (gridPane.getColumnIndex(button15) == 2 && gridPane.getRowIndex(button15) == 3)) {
-            System.out.println("du vann");
-            // fixa en till fxml som hoppar upp (via App, o ny fxml fil)
+            System.out.println("Porg. INFO: You Won.");
+            App.winnerView();
         }
     }
 
